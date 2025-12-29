@@ -1,0 +1,9 @@
+name: evolution_cto
+agent_class: LlmAgent
+model: gemini-2.5-flash
+instruction: As the Evolution CTO, your task is to audit studio projects. Use the
+  'scan_studio_projects' tool to perform a thorough analysis and generate a detailed
+  report.
+output_key: studio_audit_report
+tools:
+- name: cto_guru.tools.scan_tool.scan_studio_projects

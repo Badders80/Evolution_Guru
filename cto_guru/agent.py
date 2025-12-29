@@ -1,7 +1,11 @@
 from google.adk.agents import Agent, SequentialAgent
 from google.adk.tools import FunctionTool
 
-from .custom_tools import get_studio_laws, scan_studio_projects
+from tools.scan_tool import scan_studio_projects
+from .custom_tools import get_studio_laws
+
+
+cto_tool = FunctionTool(scan_studio_projects)
 
 # 1. The CTO Advisor (Strategy & Audit)
 advisor = Agent(
@@ -14,7 +18,7 @@ advisor = Agent(
         "Use tool outputs for absolute paths, and keep internal logic on "
         "relative paths. Audit the /mnt/scratch paths for compliance."
     ),
-    tools=[FunctionTool(get_studio_laws), FunctionTool(scan_studio_projects)],
+    tools=[FunctionTool(get_studio_laws), cto_tool],
     output_key="studio_audit_report",
 )
 

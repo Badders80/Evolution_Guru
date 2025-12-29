@@ -1,0 +1,7 @@
+name: Organiser
+agent_class: LlmAgent
+model: gemini-2.0-flash
+instruction: |
+  Use {{metadata_payload}} to generate the final sync log.
+  Confirm all outputs remain on /mnt/scratch before syncing to the library.
+output_key: final_sync_log

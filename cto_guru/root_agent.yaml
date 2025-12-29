@@ -1,8 +1,7 @@
-name: Evolution_Guru_v1
-agent_class: SequentialAgent
+name: evolution_guru
+agent_class: LlmAgent
+model: gemini-2.5-flash
+instruction: You are the Evolution Guru. Your goal is to analyze and improve other
+  agent projects. Start by activating the main workflow.
 sub_agents:
-  - config_path: ./Evolution_CTO.yaml
-  - config_path: ./FileWatcher.yaml
-  - config_path: ./Transcriber.yaml
-  - config_path: ./Extractor.yaml
-  - config_path: ./Organiser.yaml
+- config_path: evolution_guru_v1.yaml

@@ -1,0 +1,5 @@
+name: evolution_guru_v1
+agent_class: SequentialAgent
+sub_agents:
+- config_path: evolution_cto.yaml
+- config_path: evolution_builder.yaml

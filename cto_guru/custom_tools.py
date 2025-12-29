@@ -13,6 +13,7 @@ def _load_env():
 
     base_dir = Path(__file__).resolve().parent
     candidates = (
+        Path("/mnt/scratch/vault/central_keys.env"),
         base_dir / "central_keys.env",
         base_dir.parent / "central_keys.env",
         base_dir / ".env",

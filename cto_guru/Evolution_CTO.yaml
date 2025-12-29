@@ -9,5 +9,5 @@ instruction: |
   Audit the /mnt/scratch paths for compliance.
 tools:
   - name: cto_guru.custom_tools.get_studio_laws
-  - name: cto_guru.custom_tools.scan_studio_projects
+  - name: tools.scan_tool.scan_studio_projects
 output_key: studio_audit_report
