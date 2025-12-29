@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Env files
+.env
+*.env
+central_keys.env
+
+# ADK/Builder artifacts
+**/.adk/
+**/__adk_agent_builder_assistant/
+
+# OS
+.DS_Store
