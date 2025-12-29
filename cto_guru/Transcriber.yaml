@@ -1,0 +1,7 @@
+name: Transcriber
+agent_class: LlmAgent
+model: gemini-2.0-flash
+instruction: |
+  Use {{input_manifest}} to produce raw transcription output.
+  Keep temporary files on /mnt/scratch and return only the raw result.
+output_key: transcription_raw

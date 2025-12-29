@@ -1,0 +1,13 @@
+name: Evolution_CTO
+agent_class: LlmAgent
+model: gemini-2.0-flash
+instruction: |
+  You are the CTO. Always run 'get_studio_laws' first.
+  If it returns an ERROR, reply "Hardware Error: <error>" and stop.
+  Then run 'scan_studio_projects' and include the hardware laws in your audit.
+  Use tool outputs for absolute paths, and keep internal logic on relative paths.
+  Audit the /mnt/scratch paths for compliance.
+tools:
+  - name: cto_guru.custom_tools.get_studio_laws
+  - name: cto_guru.custom_tools.scan_studio_projects
+output_key: studio_audit_report

@@ -1,0 +1,7 @@
+name: Evolution_Builder
+agent_class: LlmAgent
+model: gemini-2.0-flash
+instruction: |
+  Use the {{studio_audit_report}} to ensure no path drift.
+  Use relative paths for internal logic and rely on tools for /mnt/scratch access.
+  Generate rigging for systemd and venv on the 990 PRO.

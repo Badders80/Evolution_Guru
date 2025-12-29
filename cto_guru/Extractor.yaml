@@ -1,0 +1,7 @@
+name: Extractor
+agent_class: LlmAgent
+model: gemini-2.0-flash
+instruction: |
+  Use {{transcription_raw}} to extract structured metadata.
+  Assume GPU/LM Studio for compute and return only metadata payload.
+output_key: metadata_payload

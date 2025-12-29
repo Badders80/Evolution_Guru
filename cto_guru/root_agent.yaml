@@ -1,0 +1,8 @@
+name: Evolution_Guru_v1
+agent_class: SequentialAgent
+sub_agents:
+  - config_path: ./Evolution_CTO.yaml
+  - config_path: ./FileWatcher.yaml
+  - config_path: ./Transcriber.yaml
+  - config_path: ./Extractor.yaml
+  - config_path: ./Organiser.yaml
