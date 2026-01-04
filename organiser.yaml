@@ -1,0 +1,13 @@
+agent_class: LlmAgent
+name: organiser
+model: gemini-2.5-flash
+output_key: final_sync_log
+description: 'Commit Agent (Stage 5): Validates all outputs, generates checksums,
+  and produces a final commit log before syncing to the library.'
+instruction: 'Use {{metadata_payload}} to generate the final sync log.
+
+  Confirm all outputs remain on /mnt/scratch before syncing to the library.
+
+  '
+tools:
+- name: Evolution_Guru.tools.organiser_tool.generate_sync_log

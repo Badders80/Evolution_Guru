@@ -1,0 +1,15 @@
+agent_class: LlmAgent
+name: file_watcher
+model: gemini-2.5-flash
+output_key: input_manifest
+description: 'Detection Agent (Stage 2): Analyzes the CTO''s audit report and creates
+  a comprehensive input manifest for all files to be processed.'
+instruction: 'Use {{studio_audit_report}} as the grounding law.
+
+  Create an input manifest anchored to /mnt/scratch projects and data.
+
+  Keep internal logic on relative paths and output only the manifest.
+
+  '
+tools:
+- name: Evolution_Guru.tools.file_watcher_tool.create_manifest

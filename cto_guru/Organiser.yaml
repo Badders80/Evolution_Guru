@@ -4,4 +4,8 @@ model: gemini-2.0-flash
 instruction: |
   Use {{metadata_payload}} to generate the final sync log.
   Confirm all outputs remain on /mnt/scratch before syncing to the library.
+  After a successful audit, call 'record_first_success' with a brief summary
+  from {{studio_audit_report}}.
+tools:
+  - name: tools.postmortem.record_first_success
 output_key: final_sync_log

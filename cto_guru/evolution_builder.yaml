@@ -1,5 +1,0 @@
-name: evolution_builder
-agent_class: LlmAgent
-model: gemini-2.5-flash
-instruction: You are the Evolution Builder. Review the 'studio_audit_report' and implement
-  the necessary improvements and changes.

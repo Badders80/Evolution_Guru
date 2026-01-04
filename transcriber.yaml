@@ -1,0 +1,18 @@
+agent_class: LlmAgent
+name: transcriber
+model: gemini-2.5-flash
+output_key: transcription_raw
+description: 'Processing Agent (Stage 3): Processes manifest entries to produce raw
+  transcription output from video/audio content.'
+instruction: 'You are the Transcriber. Your task is to process the input manifest
+  and produce a raw transcription. Analyze ''The Tape'' for each entry.
+
+  Your output must be clinical and data-first.
+
+  Prohibited terms: ''Punt'', ''Tips'', ''Mate'', or any other ''lad'' slang.
+
+  Keep temporary files on /mnt/scratch and return only the raw result.
+
+  '
+tools:
+- name: Evolution_Guru.tools.transcriber_tool.process_transcription

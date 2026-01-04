@@ -1,0 +1,15 @@
+agent_class: LlmAgent
+name: evolution_guru_v1
+model: gemini-2.5-flash
+description: The master agent for the Evolution Guru pipeline. It initiates the process
+  by delegating to the sequential orchestrator.
+instruction: 'You are the master orchestrator for the Evolution Guru pipeline.
+
+  Your primary role is to delegate all tasks to the sequential processing pipeline
+  to begin the hardware audit and content processing workflow.
+
+  Start the process.
+
+  '
+sub_agents:
+- config_path: sequential_agent_orchestrator.yaml

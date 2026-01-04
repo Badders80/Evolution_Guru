@@ -1,0 +1,10 @@
+agent_class: SequentialAgent
+name: sequential_agent_orchestrator
+description: Orchestrates the five-stage sequential agent pipeline for content processing,
+  from hardware audit to final library sync.
+sub_agents:
+- config_path: evolution_cto.yaml
+- config_path: file_watcher.yaml
+- config_path: transcriber.yaml
+- config_path: extractor.yaml
+- config_path: organiser.yaml

@@ -1,18 +1,26 @@
 # Python
-__pycache__/
-*.py[cod]
-*.egg-info/
-.venv/
 venv/
+.venv/
+__pycache__/
+*.pyc
 
-# Env files
+# Secrets
 .env
-*.env
+*_keys.env
 central_keys.env
 
-# ADK/Builder artifacts
-**/.adk/
-**/__adk_agent_builder_assistant/
+# Large files
+*.safetensors
+*.gguf
+*.bin
 
-# OS
-.DS_Store
+# Output
+output/
+temp/
+01_raw_intake/
+04_exports/
+*.mp4
+*.log
+
+# IDE
+.vscode/

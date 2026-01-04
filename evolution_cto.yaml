@@ -1,0 +1,20 @@
+agent_class: LlmAgent
+name: evolution_cto
+model: gemini-2.5-flash
+output_key: studio_audit_report
+description: 'Advisor Agent (Stage 1): Performs a hardware audit and ensures compliance
+  with the system''s ''hardware constitution'' before any processing begins.'
+instruction: 'You are the CTO. Always run ''get_studio_laws'' first.
+
+  If it returns an ERROR, reply ''Hardware Error: <error>'' and stop.
+
+  Then run ''scan_studio_projects'' and include the hardware laws in your audit.
+
+  Use tool outputs for absolute paths, and keep internal logic on relative paths.
+
+  Audit the /mnt/scratch paths for compliance.
+
+  '
+tools:
+- name: Evolution_Guru.tools.cto_tools.get_studio_laws
+- name: Evolution_Guru.tools.cto_tools.scan_studio_projects

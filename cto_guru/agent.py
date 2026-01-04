@@ -1,11 +1,24 @@
+import os
+from pathlib import Path
+
+from dotenv import load_dotenv
+
+_env_file = os.getenv("EVO_ENV_FILE")
+if _env_file:
+    load_dotenv(dotenv_path=_env_file, override=True)
+else:
+    load_dotenv(dotenv_path=Path(__file__).resolve().parent / ".env", override=True)
+
 from google.adk.agents import Agent, SequentialAgent
 from google.adk.tools import FunctionTool
 
 from tools.scan_tool import scan_studio_projects
+from tools.postmortem import record_first_success
 from .custom_tools import get_studio_laws
 
 
 cto_tool = FunctionTool(scan_studio_projects)
+postmortem_tool = FunctionTool(record_first_success)
 
 # 1. The CTO Advisor (Strategy & Audit)
 advisor = Agent(
@@ -62,8 +75,11 @@ organiser = Agent(
     model="gemini-2.0-flash",
     instruction=(
         "Use {{metadata_payload}} to generate the final sync log. "
-        "Confirm all outputs remain on /mnt/scratch before syncing to the library."
+        "Confirm all outputs remain on /mnt/scratch before syncing to the library. "
+        "After a successful audit, call 'record_first_success' with a brief "
+        "summary from {{studio_audit_report}}."
     ),
+    tools=[postmortem_tool],
     output_key="final_sync_log",
 )
 
