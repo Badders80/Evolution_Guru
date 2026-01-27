@@ -24,3 +24,4 @@ temp/
 
 # IDE
 .vscode/
+**/.adk/session.db
